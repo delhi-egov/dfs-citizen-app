@@ -1,0 +1,22 @@
+<div class="md-inline-form">
+    <md-content name="loginForm" layout="column" layout-align="center center">
+        <md-input-container>
+            <label>Phone Number</label>
+            <input type="number" name="phone" ng-model="lc.credentials.phone" required>
+            <ng-messages for="loginForm.phone.$error">
+                <ng-message when="required">This is required!</ng-message>
+            </ng-messages>
+        </md-input-container>
+        <md-input-container>
+            <label>Password</label>
+            <input type="password" name="password" ng-model="lc.credentials.password" required>
+            <ng-messages for="loginForm.password.$error">
+                <ng-message when="required">This is required!</ng-message>
+            </ng-messages>
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="lc.login()">
+            Login
+        </md-button>
+    </md-content>
+</div>
+{{lc.loginError}}

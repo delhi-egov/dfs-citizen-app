@@ -1,0 +1,69 @@
+<div layout="column" flex>
+    <md-toolbar layout="row">
+        <h2 align="center" flex>Delhi Fire Services</h2>
+        <md-button ng-click="hc.logout()">Logout</md-button>
+    </md-toolbar>
+    <div flex layout="row">
+        <md-sidenav  ng-click="hc.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z2">
+            <md-list>
+                <md-list-item ng-class="hc.selected === 'newApplication' ? 'md-primary' : false">
+                    <md-button ng-click="hc.selected='newApplication'" flex>
+                        New Application
+                    </md-button>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <md-button ng-click="hc.selected='myApplications'" flex>
+                        My Applications
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <md-content flex id="content" layout="column">
+          <div ng-show="hc.selected === 'newApplication'" layout="column">
+              <md-card layout-align="center center">
+                  <md-card-title>
+                      <md-card-title-text>
+                          <span class="md-headline">New Plan Approval</span>
+                      </md-card-title-text>
+                  </md-card-title>
+                      <md-card-content>
+                          Select this if you need to get a NOC for a new plan
+                      </md-card-content>
+                      <md-card-actions layout="row" layout-align="center center">
+                          <md-button class="md-raised md-primary" ng-click="hc.apply('newPlan')">Apply</md-button>
+                      </md-card-actions>
+              </md-card>
+              <md-card layout-align="center center">
+                  <md-card-title>
+                      <md-card-title-text>
+                          <span class="md-headline">New Building Approval</span>
+                      </md-card-title-text>
+                  </md-card-title>
+                      <md-card-content>
+                          Select this if you need to get a NOC for a new building
+                      </md-card-content>
+                      <md-card-actions layout="row" layout-align="center center">
+                          <md-button class="md-raised md-primary" ng-click="hc.apply('newBuilding')">Apply</md-button>
+                      </md-card-actions>
+              </md-card>
+              <md-card layout-align="center center">
+                  <md-card-title>
+                      <md-card-title-text>
+                          <span class="md-headline">Renewal</span>
+                      </md-card-title-text>
+                  </md-card-title>
+                      <md-card-content>
+                          Select this if you need to renew a NOC for a building
+                      </md-card-content>
+                      <md-card-actions layout="row" layout-align="center center">
+                          <md-button class="md-raised md-primary" ng-click="hc.apply('renewBuilding')">Apply</md-button>
+                      </md-card-actions>
+              </md-card>
+          </div>
+          <div ng-show="hc.selected === 'myApplications'">
+              Select your application
+          </div>
+        </md-content>
+    </div>
+</div>

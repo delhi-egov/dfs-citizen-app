@@ -1,0 +1,28 @@
+{
+  "name": "citizen-app",
+  "version": "1.0.0",
+  "description": "Citizen app for the Delhi Fire Services department",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "_preinstall": "npm install -g grunt-cli watchify"
+  },
+  "author": "Vaibhav Sinha",
+  "license": "MIT",
+  "peerDependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-serve": "^0.1.6"
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-material": "^1.1.0-rc.5",
+    "angular-messages": "^1.5.7",
+    "angular-ui-router": "^0.3.1"
+  }
+}

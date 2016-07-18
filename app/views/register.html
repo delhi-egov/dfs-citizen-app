@@ -1,0 +1,34 @@
+<form name="registerForm" layout="column" layout-align="center center">
+    <md-input-container>
+        <label>Name</label>
+        <input type="text" name="name" ng-model="rc.credentials.name" required>
+        <ng-messages for="registerForm.name.$error">
+            <ng-message when="required">This is required!</ng-message>
+        </ng-messages>
+    </md-input-container>
+    <md-input-container>
+        <label>Email</label>
+        <input type="email" name="email" ng-model="rc.credentials.email" required>
+        <ng-messages for="registerForm.email.$error">
+            <ng-message when="required">This is required!</ng-message>
+        </ng-messages>
+    </md-input-container>
+    <md-input-container>
+        <label>Phone Number</label>
+        <input type="number" name="phone" ng-model="rc.credentials.phone" required>
+        <ng-messages for="registerForm.phone.$error">
+            <ng-message when="required">This is required!</ng-message>
+        </ng-messages>
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input type="password" name="password" ng-model="rc.credentials.password" required>
+        <ng-messages for="registerForm.password.$error">
+            <ng-message when="required">This is required!</ng-message>
+        </ng-messages>
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="rc.register()">
+        Register
+    </md-button>
+</form>
+{{rc.registerError}}
