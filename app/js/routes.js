@@ -19,41 +19,56 @@ module.exports = function($stateProvider, $urlRouterProvider) {
                                   controllerAs: 'hc'
                  })
                  .state('newPlan', {
-                                  url: '/newPlan',
+                                  url: '/',
                                   abstract: true,
                                   templateUrl: 'views/new_plan.html'
                  })
                  .state('newPlan.create', {
                                   url: '/create',
                                   templateUrl: 'views/new_plan_create.html',
-                                  controller: 'createNewPlanController',
-                                  controllerAs: 'npc'
+                                  controller: 'createController',
+                                  controllerAs: 'npc',
+                                  params: {
+                                      application: undefined,
+                                      process: undefined,
+                                      form: undefined,
+                                      report: undefined
+                                  }
                  })
                  .state('newPlan.fillForm', {
                                   url: '/fillForm',
                                   templateUrl: 'views/new_plan_form.html',
-                                  controller: 'fillFormNewPlanController',
+                                  controller: 'fillFormController',
                                   controllerAs: 'npc',
                                   params: {
-                                      application: undefined
+                                      application: undefined,
+                                      process: undefined,
+                                      form: undefined,
+                                      report: undefined
                                   }
                  })
                  .state('newPlan.attachReport', {
                                   url: '/attachReport',
                                   templateUrl: 'views/new_plan_attach.html',
-                                  controller: 'attachReportNewPlanController',
+                                  controller: 'attachReportController',
                                   controllerAs: 'npc',
                                   params: {
-                                      application: undefined
+                                      application: undefined,
+                                      process: undefined,
+                                      form: undefined,
+                                      report: undefined
                                   }
                  })
                  .state('newPlan.submit', {
                                   url: '/submit',
                                   templateUrl: 'views/new_plan_submit.html',
-                                  controller: 'submitNewPlanController',
+                                  controller: 'submitController',
                                   controllerAs: 'npc',
                                   params: {
-                                      application: undefined
+                                      application: undefined,
+                                      process: undefined,
+                                      form: undefined,
+                                      report: undefined
                                   }
                  });
 

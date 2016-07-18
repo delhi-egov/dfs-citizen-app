@@ -12,10 +12,10 @@ var services = require("./services");
 var loginController = require("./controllers/login_controller");
 var registerController = require("./controllers/register_controller");
 var homeController = require("./controllers/home_controller");
-var createNewPlanController = require("./controllers/create_new_plan_controller");
-var fillFormNewPlanController = require("./controllers/fill_form_new_plan_controller");
-var attachReportNewPlanController = require("./controllers/attach_report_new_plan_controller");
-var submitNewPlanController = require("./controllers/submit_new_plan_controller");
+var createController = require("./controllers/create_controller");
+var fillFormController = require("./controllers/fill_form_controller");
+var attachReportController = require("./controllers/attach_report_controller");
+var submitController = require("./controllers/submit_controller");
 
 var app = angular.module("app", [ngMaterial, 'ui.router', 'ngMessages', 'ngFileUpload']);
 
@@ -29,10 +29,10 @@ app.factory("authInfoService", services.authInfoService);
 app.controller("loginController", ['$scope', '$http', '$state', 'authInfoService', loginController]);
 app.controller("registerController", ['$scope', '$http', '$state', 'authInfoService', registerController]);
 app.controller("homeController", ['$scope', '$http', '$state', 'authInfoService', homeController]);
-app.controller("createNewPlanController", ['$scope', '$http', '$state', 'authInfoService', createNewPlanController]);
-app.controller("fillFormNewPlanController", ['$scope', '$http', '$state', 'authInfoService', fillFormNewPlanController]);
-app.controller("attachReportNewPlanController", ['$scope', '$http', '$state', 'authInfoService', 'Upload', attachReportNewPlanController]);
-app.controller("submitNewPlanController", ['$scope', '$http', '$state', 'authInfoService', submitNewPlanController]);
+app.controller("createController", ['$scope', '$http', '$state', 'authInfoService', createController]);
+app.controller("fillFormController", ['$scope', '$http', '$state', 'authInfoService', fillFormController]);
+app.controller("attachReportController", ['$scope', '$http', '$state', 'authInfoService', 'Upload', attachReportController]);
+app.controller("submitController", ['$scope', '$http', '$state', 'authInfoService', submitController]);
 
 app.config(['$mdThemingProvider', '$stateProvider', '$urlRouterProvider', '$httpProvider', function($mdThemingProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
                  $httpProvider.interceptors.push('redirectToLoginInterceptor');

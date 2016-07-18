@@ -13,7 +13,7 @@ module.exports = function($scope, $http, $state, AuthInfoService) {
             this.logoutError = response.message;
         });
     };
-    this.apply = function(process) {
-        $state.go(process + '.create');
+    this.apply = function(process, form, report) {
+        $state.go(process + '.create', {application: undefined, process: process, form: form, report: report});
     };
 };

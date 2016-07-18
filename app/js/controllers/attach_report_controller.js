@@ -3,6 +3,7 @@ var client = require('../client');
 module.exports = function($scope, $http, $state, AuthInfoService, Upload) {
     var backend = client($http, Upload);
     var that = this;
+    this.next = 'submit';
     this.logout = function() {
         backend.logout().then(function(response) {
                 AuthInfoService.user = {};
@@ -12,9 +13,9 @@ module.exports = function($scope, $http, $state, AuthInfoService, Upload) {
         });
     };
     this.submit = function() {
-        backend.attachDocument($state.params.application.id, 'complianceReport', this.file).then(function(response) {
+        backend.attachDocument($state.params.application.id, $state.params.report, this.file).then(function(response) {
             backend.changeStage($state.params.application.id, 'reportAttached').then(function(response) {
-                    $state.go('newPlan.submit', {application: $state.params.application});
+                    $state.go($state.params.process + '.' + that.next, {application: $state.params.application, process: $state.params.process, form: $state.params.form, report: $state.params.report});
             }, function(response) {
                 this.submitError = response.message;
             });
