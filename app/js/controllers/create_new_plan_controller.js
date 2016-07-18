@@ -4,7 +4,6 @@ module.exports = function($scope, $http, $state, AuthInfoService) {
     var backend = client($http);
     var that = this;
     this.credentials = {};
-    this.selected='newApplication';
     this.logout = function() {
         backend.logout().then(function(response) {
                 AuthInfoService.user = {};
@@ -13,7 +12,11 @@ module.exports = function($scope, $http, $state, AuthInfoService) {
             this.logoutError = response.message;
         });
     };
-    this.apply = function(process) {
-        $state.go(process + '.create');
+    this.createApplication = function() {
+        backend.createApplication('newPlan').then(function(response) {
+                $state.go('newPlan.fillForm', {application: response.data});
+        }, function(response) {
+            this.createError = response.message;
+        });
     };
 };

@@ -3,8 +3,6 @@ var client = require('../client');
 module.exports = function($scope, $http, $state, AuthInfoService) {
     var backend = client($http);
     var that = this;
-    this.credentials = {};
-    this.selected='newApplication';
     this.logout = function() {
         backend.logout().then(function(response) {
                 AuthInfoService.user = {};
@@ -13,7 +11,11 @@ module.exports = function($scope, $http, $state, AuthInfoService) {
             this.logoutError = response.message;
         });
     };
-    this.apply = function(process) {
-        $state.go(process + '.create');
+    this.submit = function() {
+        backend.complete($state.params.application.id).then(function(response) {
+            that.successMessage = "Application submission complete";
+        }, function(response) {
+            this.submitError = response.message;
+        });
     };
 };

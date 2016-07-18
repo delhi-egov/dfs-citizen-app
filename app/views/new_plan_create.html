@@ -1,0 +1,18 @@
+<md-content layout="column" class="md-whiteframe-z2">
+    <h2>New building plan application</h2>
+    <div layout="column" flex>
+        The process to provide NOC for the plan for a new building has following steps:
+        1. You will need to create a new application by click on 'Create Application' button below
+        2. On the next screen you will need to fill the Form I
+        3. On the following screen you will need to upload the compliance report
+        4. On the final screen you will need to click the 'Submit' button to submit the application
+
+        Once you create a new application in the first step, it will be stored in our system, and you
+        can resume filling it in even if you dont complete and submit the application in the first go.
+        The application will be accessible through 'My Applicatios' link on the Home page.
+
+        Click on the button below to create a new application
+        <md-button class="md-primary md-raised" ng-click="npc.createApplication()">Create Application</md-button>
+        {{npc.createError}}
+    </div>
+</md-content>
