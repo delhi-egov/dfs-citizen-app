@@ -1,6 +1,9 @@
- <span class="btn btn-default btn-file col-lg-1" ngf-select ng-model="npc.file" name="file">
-      <md-button class="md-raised md-primary">Select File</md-button>
- </span>
- {{npc.file.name || 'Select Compliance Report'}}
- <md-button class="md-raised md-primary" ng-click="npc.submit()">Attach Document</md-button>
-{{npc.submitError}}
+<md-content  layout="row" layout-align="center center">Upload the compliance report</md-content>
+<md-content layout="row" layout-align="center center">
+      <span class="btn btn-default btn-file col-lg-1" ngf-select ng-model="npc.file" name="file">
+            <md-button class="md-raised">Select File</md-button>
+      </span>
+      {{npc.file.name || 'Select Compliance Report'}}
+      <md-button class="md-raised md-primary" ng-click="npc.submit()">Attach Document</md-button>
+      {{npc.submitError}}
+</md-content>

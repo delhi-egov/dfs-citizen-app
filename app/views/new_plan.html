@@ -1,9 +1,8 @@
 <div layout="column" flex>
     <md-toolbar layout="row">
-        <h2>Delhi Fire Services</h2>
-        <md-divider></md-divider>
-        <md-button ui-sref="home">Home</md-button>
+        <h2 flex>Delhi Fire Services</h2>
+        <md-button align="right"><a ui-sref="home">Home</a></md-button>
         <md-button ng-click="npc.logout()" align="right">Logout</md-button>
     </md-toolbar>
-    <div ui-view flex></div>
+    <div ui-view flex layout="column"></div>
 </div>

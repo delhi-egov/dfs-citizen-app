@@ -4,6 +4,7 @@ var ngMaterial = require("angular-material");
 require("angular-messages");
 require("angular-ui-router");
 require("ng-file-upload");
+require('angular-material-data-table');
 
 var interceptors = require("./interceptors");
 var routes = require("./routes");
@@ -17,7 +18,7 @@ var fillFormController = require("./controllers/fill_form_controller");
 var attachReportController = require("./controllers/attach_report_controller");
 var submitController = require("./controllers/submit_controller");
 
-var app = angular.module("app", [ngMaterial, 'ui.router', 'ngMessages', 'ngFileUpload']);
+var app = angular.module("app", [ngMaterial, 'ui.router', 'ngMessages', 'ngFileUpload', 'md.data.table']);
 
 //Interceptors registration
 app.factory("redirectToLoginInterceptor", ['$q', '$location', interceptors.redirectToLoginInterceptor]);

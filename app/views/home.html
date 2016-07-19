@@ -20,50 +20,75 @@
             </md-list>
         </md-sidenav>
         <md-content flex id="content" layout="column">
-          <div ng-show="hc.selected === 'newApplication'" layout="column">
-              <md-card layout-align="center center">
-                  <md-card-title>
-                      <md-card-title-text>
-                          <span class="md-headline">New Plan Approval</span>
-                      </md-card-title-text>
-                  </md-card-title>
-                      <md-card-content>
-                          Select this if you need to get a NOC for a new plan
-                      </md-card-content>
-                      <md-card-actions layout="row" layout-align="center center">
-                          <md-button class="md-raised md-primary" ng-click="hc.apply('newPlan', 'formI', 'complianceReport')">Apply</md-button>
-                      </md-card-actions>
-              </md-card>
-              <md-card layout-align="center center">
-                  <md-card-title>
-                      <md-card-title-text>
-                          <span class="md-headline">New Building Approval</span>
-                      </md-card-title-text>
-                  </md-card-title>
-                      <md-card-content>
-                          Select this if you need to get a NOC for a new building
-                      </md-card-content>
-                      <md-card-actions layout="row" layout-align="center center">
-                          <md-button class="md-raised md-primary" ng-click="hc.apply('newBuilding', 'formI', 'complianceReport')">Apply</md-button>
-                      </md-card-actions>
-              </md-card>
-              <md-card layout-align="center center">
-                  <md-card-title>
-                      <md-card-title-text>
-                          <span class="md-headline">Renewal</span>
-                      </md-card-title-text>
-                  </md-card-title>
-                      <md-card-content>
-                          Select this if you need to renew a NOC for a building
-                      </md-card-content>
-                      <md-card-actions layout="row" layout-align="center center">
-                          <md-button class="md-raised md-primary" ng-click="hc.apply('renewBuilding', 'formJ', 'declaration')">Apply</md-button>
-                      </md-card-actions>
-              </md-card>
-          </div>
-          <div ng-show="hc.selected === 'myApplications'">
-              Select your application
-          </div>
+            <div ng-show="hc.selected === 'newApplication'" layout="column">
+                <md-card layout-align="center center">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">New Plan Approval</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        Select this if you need to get a NOC for a new plan
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary" ng-click="hc.apply('newPlan', 'formI', 'complianceReport')">Apply</md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card layout-align="center center">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">New Building Approval</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        Select this if you need to get a NOC for a new building
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary" ng-click="hc.apply('newBuilding', 'formI', 'complianceReport')">Apply</md-button>
+                    </md-card-actions>
+                </md-card>
+                <md-card layout-align="center center">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Renewal</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        Select this if you need to renew a NOC for a building
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary" ng-click="hc.apply('renewBuilding', 'formJ', 'declaration')">Apply</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <div ng-show="hc.selected === 'myApplications'">
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head>
+                            <tr md-row>
+                                <th md-column md-numeric><span>Application No.</span></th>
+                                <th md-column>Type</th>
+                                <th md-column><span>Created on</span></th>
+                                <th md-column><span>Updated on</span></th>
+                                <th md-column>Status</th>
+                                <th md-column>Progress</th>
+                                <th md-column>Resume</th>
+                            </tr>
+                        </thead>
+                        <tbody md-body>
+                            <tr md-row ng-repeat="application in hc.applications">
+                                <td md-cell>{{application.id}}</td>
+                                <td md-cell>{{application.type}}</td>
+                                <td md-cell>{{application.createdAt | date : "medium"}}</td>
+                                <td md-cell>{{application.updatedAt | date : "medium"}}</td>
+                                <td md-cell>{{application.status}}</td>
+                                <td md-cell>{{application.progress}}</td>
+                                <td md-cell><md-button ng-disabled="application.stage === 'COMPLETE'" ng-click="hc.resume(application)">Resume</md-button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+            </div>
         </md-content>
     </div>
 </div>

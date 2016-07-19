@@ -19,7 +19,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
                                   controllerAs: 'hc'
                  })
                  .state('newPlan', {
-                                  url: '/',
+                                  url: '/newPlan',
                                   abstract: true,
                                   templateUrl: 'views/new_plan.html'
                  })

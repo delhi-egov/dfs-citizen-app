@@ -44,6 +44,12 @@ module.exports = function($http, Upload) {
             return $http.post('/api/application/complete', {
                 applicationId: applicationId
             });
+        },
+        getApplications: function() {
+            return $http.get('/api/applications');
+        },
+        getStatus: function(applicationId) {
+            return $http.get('/api/application/' + applicationId + '/status');
         }
     };
 };

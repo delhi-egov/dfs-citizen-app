@@ -1,18 +1,33 @@
-<md-content layout="column" class="md-whiteframe-z2">
-    <h2>New building plan application</h2>
-    <div layout="column" flex>
-        The process to provide NOC for the plan for a new building has following steps:
-        1. You will need to create a new application by click on 'Create Application' button below
-        2. On the next screen you will need to fill the Form I
-        3. On the following screen you will need to upload the compliance report
-        4. On the final screen you will need to click the 'Submit' button to submit the application
+<md-content layout="column" layout-align="center center" flex>
+    <h2 align="center">New building plan application</h2>
+    <div layout="column" layout-align="center center">
+        <p>
+            The process to provide NOC for the plan for a new building has following steps:
+            <ol>
+                <li>
+                    You will need to create a new application by click on 'Create Application' button below
+                </li>
+                <li>
+                    On the next screen you will need to fill the Form I
+                </li>
+                <li>
+                    On the following screen you will need to upload the compliance report
+                </li>
+                <li>
+                    On the final screen you will need to click the 'Submit' button to submit the application
+                </li>
+            </ol>
+        </p>
 
-        Once you create a new application in the first step, it will be stored in our system, and you
-        can resume filling it in even if you dont complete and submit the application in the first go.
-        The application will be accessible through 'My Applicatios' link on the Home page.
+        <p>
+            Once you create a new application in the first step, it will be stored in our system, and you
+            can resume filling it in even if you dont complete and submit the application in the first go.
+        </p>
+        <p>
+            The application will be accessible through 'My Applications' link on the Home page.
+        </p>
 
-        Click on the button below to create a new application
-        <md-button class="md-primary md-raised" ng-click="npc.createApplication()">Create Application</md-button>
+        <md-button class="md-primary md-raised" ng-click="npc.createApplication()" align="center">Create Application</md-button>
         {{npc.createError}}
     </div>
 </md-content>
