@@ -4,6 +4,10 @@
             <md-button class="md-raised">Select File</md-button>
       </span>
       {{npc.file.name || 'Select Compliance Report'}}
-      <md-button class="md-raised md-primary" ng-click="npc.submit()">Attach Document</md-button>
+
+      Currently uploaded: {{npc.existingDocument}}
+      <md-button class="md-raised md-primary" ng-click="npc.submit()" ng-disabled="!npc.file">Attach Document</md-button>
+      <md-button class="md-raised" ng-click="npc.skip()" ng-disabled="!npc.existingDocument">Skip</md-button>
+      <md-button class="md-raised" ng-click="npc.back()">Back</md-button>
       {{npc.submitError}}
 </md-content>

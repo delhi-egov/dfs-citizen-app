@@ -1,76 +1,73 @@
-module.exports = function($stateProvider, $urlRouterProvider) {
+module.exports = function($stateProvider, $urlRouterProvider, $locationProvider) {
+    var params = {
+        processType: undefined,
+        currentStage: undefined,
+        params: undefined
+    };
+
     $stateProvider
                  .state('login', {
                                   url: '/login',
-                                  templateUrl: 'views/login.html',
+                                  templateUrl: 'app/views/login.html',
                                   controller: 'loginController',
                                   controllerAs: 'lc'
                  })
                  .state('register', {
                                   url: '/register',
-                                  templateUrl: 'views/register.html',
+                                  templateUrl: 'app/views/register.html',
                                   controller: 'registerController',
                                   controllerAs: 'rc'
                  })
+                 .state('verify', {
+                                  url: '/verify',
+                                  templateUrl: 'app/views/verify.html',
+                                  controller: 'verifyController',
+                                  controllerAs: 'vc'
+                 })
                  .state('home', {
-                                  url: '/home',
-                                  templateUrl: 'views/home.html',
+                                  url: '/',
+                                  templateUrl: 'app/views/home.html',
                                   controller: 'homeController',
                                   controllerAs: 'hc'
                  })
-                 .state('newPlan', {
-                                  url: '/newPlan',
+                 .state('BuildingPlanNOC', {
+                                  //url: '/new',
                                   abstract: true,
-                                  templateUrl: 'views/new_plan.html'
+                                  templateUrl: 'app/views/new_plan.html',
+                                  controller: 'dashboardController',
+                                  controllerAs: 'dc'
                  })
-                 .state('newPlan.create', {
-                                  url: '/create',
-                                  templateUrl: 'views/new_plan_create.html',
+                 .state('BuildingPlanNOC.create', {
+                                  //url: '/create',
+                                  templateUrl: 'app/views/new_plan_create.html',
                                   controller: 'createController',
                                   controllerAs: 'npc',
-                                  params: {
-                                      application: undefined,
-                                      process: undefined,
-                                      form: undefined,
-                                      report: undefined
-                                  }
+                                  params: params
                  })
-                 .state('newPlan.fillForm', {
-                                  url: '/fillForm',
-                                  templateUrl: 'views/new_plan_form.html',
+                 .state('BuildingPlanNOC.fillForm', {
+                                  //url: '/fillForm',
+                                  templateUrl: 'app/views/new_plan_form.html',
                                   controller: 'fillFormController',
                                   controllerAs: 'npc',
-                                  params: {
-                                      application: undefined,
-                                      process: undefined,
-                                      form: undefined,
-                                      report: undefined
-                                  }
+                                  params: params
                  })
-                 .state('newPlan.attachReport', {
-                                  url: '/attachReport',
-                                  templateUrl: 'views/new_plan_attach.html',
+                 .state('BuildingPlanNOC.uploadDesign', {
+                                  //url: '/attachReport',
+                                  templateUrl: 'app/views/new_plan_attach.html',
                                   controller: 'attachReportController',
                                   controllerAs: 'npc',
-                                  params: {
-                                      application: undefined,
-                                      process: undefined,
-                                      form: undefined,
-                                      report: undefined
-                                  }
+                                  params: params
                  })
-                 .state('newPlan.submit', {
-                                  url: '/submit',
-                                  templateUrl: 'views/new_plan_submit.html',
+                 .state('BuildingPlanNOC.complete', {
+                                  //url: '/submit',
+                                  templateUrl: 'app/views/new_plan_submit.html',
                                   controller: 'submitController',
                                   controllerAs: 'npc',
-                                  params: {
-                                      application: undefined,
-                                      process: undefined,
-                                      form: undefined,
-                                      report: undefined
-                                  }
+                                  params: params
                  });
 
-                 $urlRouterProvider.otherwise('/home');
+                 $urlRouterProvider.otherwise('/');
+
+                 // use the HTML5 History API
+                 $locationProvider.html5Mode(true);
 };
