@@ -1,5 +1,5 @@
 {
-  "name": "citizen-app",
+  "name": "dfs-citizen-app",
   "version": "1.0.0",
   "description": "Citizen app for the Delhi Fire Services department",
   "main": "app.js",
@@ -15,17 +15,19 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
+    "grunt-contrib-compass": "^1.1.1",
     "grunt-serve": "^0.1.6"
   },
   "dependencies": {
     "angular": "^1.5.7",
     "angular-animate": "^1.5.7",
     "angular-aria": "^1.5.7",
+    "angular-citizen-client": "delhi-egov/angular-citizen-client",
     "angular-material": "^1.1.0-rc.5",
     "angular-material-data-table": "^0.10.9",
     "angular-messages": "^1.5.7",
     "angular-ui-router": "^0.3.1",
-    "ng-file-upload": "^12.0.4",
-    "angular-citizen-client": "delhi-egov/angular-citizen-client"
+    "angular-ui-router-styles": "0.0.6",
+    "ng-file-upload": "^12.0.4"
   }
 }

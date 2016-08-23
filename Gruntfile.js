@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         browserify: {
             dev: {
                 src: ['./app/js/app.js'],
-                dest: 'build/bundle.js',
+                dest: 'build/js/bundle.js',
                 options: {
                     watch: true,
                     keepAlive: true
@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             },
             default: {
                 src: ['./app/js/app.js'],
-                dest: 'build/bundle.js',
+                dest: 'build/js/bundle.js',
                 options: {
                 }
             }
@@ -21,13 +21,23 @@ module.exports = function(grunt) {
             options: {
                 port: 9000
             }
-        }
+        },
+	    compass: {
+            default: {
+                options: {
+                    sassDir: 'app/sass',
+                    cssDir: 'build/stylesheets',
+                    watch: true
+                }
+            }
+	    }
     });
 
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-serve');
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('dev-serve', ['browserify:dev', 'serve']);
-    grunt.registerTask('dev', ['browserify:dev']);
-    grunt.registerTask('default', ['browserify:default']);
+    grunt.registerTask('dev', ['browserify:dev', 'compass:default']);
+    grunt.registerTask('default', ['browserify:default', 'compass:default']);
 };

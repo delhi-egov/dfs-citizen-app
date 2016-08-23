@@ -1,5 +1,3 @@
-var client = require('../client');
-
 module.exports = function(userService, dashboardService) {
     var that = this;
     this.credentials = {};
