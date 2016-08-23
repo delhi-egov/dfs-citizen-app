@@ -18,9 +18,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
     .state('user.login', {
       url: '/login',
       templateUrl: 'app/views/partials/login.html',
-      data: {
-            css: 'build/stylesheets/usermanagement.css'
-        },
       controller: 'loginController',
       controllerAs: 'lc'
   })
@@ -75,6 +72,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
 
     $urlRouterProvider.otherwise('/user/login');
 
-    // // use the HTML5 History API
+    // use the HTML5 History API
     // $locationProvider.html5Mode(true);
 };
