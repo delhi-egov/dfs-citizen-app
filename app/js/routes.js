@@ -33,11 +33,27 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       controller: 'verifyController',
       controllerAs: 'vc'
   })
-    .state('home', {
+    .state('dashboard',  {
+        url: '/dashboard',
+        abstract: true,
+        templateUrl: 'app/views/dashboard.html',
+        controller: 'dashboardController',
+        controllerAs: 'dc',
+        data: {
+            css: 'build/stylesheets/dashboard.css'
+        }
+    })
+    .state('dashboard.home', {
       url: '/',
-      templateUrl: 'app/views/home.html',
+      templateUrl: 'app/views/partials/home.html',
       controller: 'homeController',
       controllerAs: 'hc'
+  })
+    .state('dashboard.applications', {
+      url: '/applications',
+      templateUrl: 'app/views/partials/applications.html',
+      controller: 'applicationsController',
+      controllerAs: 'ac'
   })
     .state('BuildingPlanNOC', {
       abstract: true,
@@ -70,7 +86,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       params: params
   });
 
-    $urlRouterProvider.otherwise('/user/login');
+    $urlRouterProvider.otherwise('/dashboard/');
 
     // use the HTML5 History API
     // $locationProvider.html5Mode(true);

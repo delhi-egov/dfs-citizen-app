@@ -1,0 +1,57 @@
+<div>
+	<header>
+		<section class="logo">
+			<img src="app/images/emblem_white.png">
+			<div>
+				<h3>delhi.gov.in</h3>
+				<h6>Govt. of NCT of Delhi</h6>
+			</div>
+		</section>
+		<h3 class="title">Delhi Fire Services</h3>
+		<section class="dropdown">
+			<input type="checkbox" id="dd">
+			<label for="dd">
+				<img src="app/images/profile.svg" class="profile">
+				<h5>Vaibhav Sinha</h5>
+				<img src="app/images/down.svg" class="dropdown-icon">
+			</label>
+			<div class="drop-box">
+				<ul class="drop-list">
+					<li>
+						<img src="app/images/avatar.svg" class="drop-icon">
+						<span>Profile</span>
+					</li>
+					<li>
+						<img src="app/images/logout.svg" class="drop-icon">
+						<span>Logout</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</header>
+	<section class="main">
+		<aside>
+			<h4 class="menu-title">Menu</h4>
+			<ul class="main-list">
+				<li>
+					<img src="app/images/icon1.svg" class="item-icon">
+					<span>New Application</span>
+					<img src="app/images/plus.svg" class="expand-icon">
+					<div class="submenu">
+						<ul class="sub-list">
+							<li>Building Plan NOC</li>
+							<li>New Building NOC</li>
+							<li>Building NOC Renewal</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<img src="app/images/icon2.svg" class="item-icon">
+					<span>My Applications</span>
+				</li>
+			</ul>
+		</aside>
+		<section class="content" ui-view>
+		</section>
+	</section>
+</div>

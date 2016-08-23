@@ -42,3 +42,6 @@ uploads
 
 # Build directory
 build
+
+# Sass cache
+.sass-cache
