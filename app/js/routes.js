@@ -57,30 +57,33 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
   })
     .state('BuildingPlanNOC', {
       abstract: true,
-      templateUrl: 'app/views/new_plan.html',
+      templateUrl: 'app/views/dashboard.html',
       controller: 'dashboardController',
-      controllerAs: 'dc'
+      controllerAs: 'dc',
+      data: {
+            css: 'build/stylesheets/application.css'
+      }
   })
     .state('BuildingPlanNOC.create', {
-      templateUrl: 'app/views/new_plan_create.html',
+      templateUrl: 'app/views/partials/new_plan_create.html',
       controller: 'createController',
       controllerAs: 'npc',
       params: params
   })
     .state('BuildingPlanNOC.fillForm', {
-      templateUrl: 'app/views/new_plan_form.html',
+      templateUrl: 'app/views/partials/new_plan_form.html',
       controller: 'fillFormController',
       controllerAs: 'npc',
       params: params
   })
     .state('BuildingPlanNOC.uploadDesign', {
-      templateUrl: 'app/views/new_plan_attach.html',
+      templateUrl: 'app/views/partials/new_plan_attach.html',
       controller: 'attachReportController',
       controllerAs: 'npc',
       params: params
   })
     .state('BuildingPlanNOC.complete', {
-      templateUrl: 'app/views/new_plan_submit.html',
+      templateUrl: 'app/views/partials/new_plan_submit.html',
       controller: 'submitController',
       controllerAs: 'npc',
       params: params
