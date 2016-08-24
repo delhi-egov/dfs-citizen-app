@@ -236,4 +236,11 @@ aside {
 .content {
 	display: table-cell;
 	height: 100%;
+
+	.error {
+		margin: 0 auto;
+		color: red;
+		display: block;
+		text-align: center;
+	}
 }

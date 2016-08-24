@@ -1,16 +1,19 @@
 <div class="main">
     <h2>Sign Up</h2>
-    <form class="form">
+    <form class="form register">
         <fieldset>
             <label for="phone">Mobile No.</label>
-            <input type="tel" placeholder="9876543210" name="phone" id="phone" required pattern="\d{10}">
-            <label for="name">Name</label>
-            <input type="text" placeholder="Vaibhav Sinha" name="name" id="name" required>
+            <input type="number" placeholder="9876543210" name="phone" id="phone" required pattern="\d{10}" ng-model="rc.credentials.phone">
+            <label for="first_name">First Name</label>
+            <input type="text" placeholder="Vaibhav" name="first_name" id="first_name" required ng-model="rc.credentials.firstName">
+            <label for="last_name">Last Name</label>
+            <input type="text" placeholder="Sinha" name="last_name" id="last_name" required ng-model="rc.credentials.lastName">
             <label for="email">Email ID</label>
-            <input type="email" placeholder="vaibhav@delhi.gov.in" name="email" id="email" required>
+            <input type="email" placeholder="vaibhav@delhi.gov.in" name="email" id="email" required ng-model="rc.credentials.email">
             <label for="password">Password</label>
-            <input type="password" placeholder="******" name="password" id="password" required>
-            <button type="submit">Register</button>
+            <input type="password" placeholder="******" name="password" id="password" required ng-model="rc.credentials.password">
+            <button ng-click="rc.register()">Register</button>
         </fieldset>
     </form>
+    <small class="error">{{rc.registerError}}</small>
 </div>

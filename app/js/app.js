@@ -35,7 +35,7 @@ app.factory("applicationService", ['$state', 'backendClient', 'authInfo', 'appli
 //Controller registration
 app.controller("loginController", ['userService', loginController]);
 app.controller("registerController", ['userService', registerController]);
-app.controller("verifyController", ['userService', verifyController]);
+app.controller("verifyController", ['userService', 'authInfo', verifyController]);
 app.controller("homeController", ['userService', 'dashboardService', homeController]);
 app.controller("dashboardController", ['userService', dashboardController]);
 app.controller("createController", ['applicationService', createController]);
@@ -52,9 +52,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
 
 //Run on load
 app.run(['backendClient', function(backendClient) {
-	// backendClient.me().then(function(response) {
-	// 	console.log("User data loaded");
-	// }, function(response) {
-	// 	console.error("Could not load user information");
-	// });
+	backendClient.me().then(function(response) {
+		console.log("User data loaded");
+	}, function(response) {
+		console.error("Could not load user information");
+	});
 }]);

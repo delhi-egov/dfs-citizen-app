@@ -3,10 +3,11 @@
     <form class="form login">
         <fieldset>
             <label for="phone">Mobile No.</label>
-            <input type="tel" placeholder="9876543210" name="phone" id="phone" required pattern="\d{10}">
+            <input type="number" placeholder="9876543210" name="phone" id="phone" required pattern="\d{10}" ng-model="lc.credentials.phone">
             <label for="password">Password</label>
-            <input type="password" placeholder="******" name="password" id="password" required>
-            <button type="submit">Login</button>
+            <input type="password" placeholder="******" name="password" id="password" required ng-model="lc.credentials.password">
+            <button ng-click="lc.login()">Login</button>
         </fieldset>
     </form>
+    <small class="error">{{lc.loginError}}</small>
 </div>
