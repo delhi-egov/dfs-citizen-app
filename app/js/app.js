@@ -35,9 +35,9 @@ app.factory("applicationService", ['$state', 'backendClient', 'authInfo', 'appli
 //Controller registration
 app.controller("loginController", ['userService', loginController]);
 app.controller("registerController", ['userService', registerController]);
-app.controller("verifyController", ['userService', 'authInfo', verifyController]);
+app.controller("verifyController", ['userService', 'authInfo', '$scope', verifyController]);
 app.controller("homeController", ['userService', 'dashboardService', homeController]);
-app.controller("dashboardController", ['userService', dashboardController]);
+app.controller("dashboardController", ['userService', 'dashboardService', 'authInfo', '$state', dashboardController]);
 app.controller("createController", ['applicationService', createController]);
 app.controller("fillFormController", ['applicationService', fillFormController]);
 app.controller("attachReportController", ['applicationService', attachReportController]);

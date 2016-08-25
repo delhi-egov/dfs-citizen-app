@@ -138,6 +138,7 @@ header {
 			border-bottom-color: #999;
 			border-bottom-width: 1px;
 			border-bottom-style: solid;
+			cursor: pointer;
 
 			&:last-child {
 				border-bottom-width: 0;
@@ -243,4 +244,14 @@ aside {
 		display: block;
 		text-align: center;
 	}
+}
+
+.back-button {
+	color: white;
+	background-color: $main-color;
+}
+
+.save-button {
+	color: white;
+	background-color: #7bd54f;
 }

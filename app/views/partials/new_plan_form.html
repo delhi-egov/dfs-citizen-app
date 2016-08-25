@@ -14,9 +14,9 @@
 		</section>
 		<section class="subject">
 			Sub: Application for grant of fire safety certificate in respect of
-			<input type="text" class="building-name-1">
+			<input type="text" class="building-name-1" ng-model="ffc.form.buildingName">
 			at
-			<input type="text" class="address-1">
+			<input type="text" class="address-1" ng-model="ffc.form.buildingAddress">
 			(address of building/premises).
 		</section>
 		<section class="salutation">
@@ -25,20 +25,20 @@
 		<section class="letter-content">
 			<p>
 				This is to inform you that a fire safety certificate needs to be issued in respect of
-				<input type="text" class="building-name-2">
+				<input type="text" class="building-name-2" ng-model="ffc.form.buildingName">
 				(name of the building) located at
-				<input type="text" class="address-2">
+				<input type="text" class="address-2" ng-model="ffc.form.buildingAddress">
 				(address of the building) comprised of
-				<input type="text" class="comprised-of">
+				<input type="text" class="comprised-of" ng-model="ffc.form.comprisedOf">
 				and having occupancies as
-				<input type="text" class="occupancies">
+				<input type="text" class="occupancies" ng-model="ffc.form.occupancies">
 				.
 			</p>
 			<p>
 				In this connection it is submitted that all the fire prevention and fire safety measures as recommended by you vide letter No.
-				<input type="text" class="letter-no">
+				<input type="text" class="letter-no" ng-model="ffc.form.letterNumber">
 				dated
-				<input type="date" class="letter-date">
+				<input type="date" class="letter-date" ng-model="ffc.form.letterDate">
 				have been provided in the building/premises and para wise compliance report is enclosed.
 			</p>
 			<p>
@@ -46,15 +46,15 @@
 			</p>
 		</section>
 		<section class="sender-details">
-			Dated <input type="date" class="dated"><br>
-			Contact Details <input type="text" class="contact-details"><br>
-			Name in full <input type="text" class="name"><br>
-			Tel No. <input type="tel" class="telephone"><br>
-			Mobile No. <input type="tel" class="mobile"><br>
+			Dated <input type="date" class="dated" ng-model="ffc.form.date"><br>
+			Contact Details <input type="text" class="contact-details" ng-model="ffc.form.contactDetails"><br>
+			Name in full <input type="text" class="name" ng-model="ffc.form.name"><br>
+			Tel No. <input type="tel" class="telephone" ng-model="ffc.form.telephone"><br>
+			Mobile No. <input type="tel" class="mobile" ng-model="ffc.form.mobile"><br>
 		</section>
 	</section>
 	<section class="actions">
-		<button class="back-button">Back</button>
-		<button class="save-button">Save</button>
+		<button class="back-button" ng-click="ffc.back()">Back</button>
+		<button class="save-button" ng-click="ffc.submit()">Save</button>
 	</section>
 </div>

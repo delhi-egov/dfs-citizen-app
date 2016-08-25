@@ -12,18 +12,18 @@
 			<input type="checkbox" id="dd">
 			<label for="dd">
 				<img src="app/images/profile.svg" class="profile">
-				<h5>Vaibhav Sinha</h5>
+				<h5>{{dc.user.firstName + ' ' + dc.user.lastName}}</h5>
 				<img src="app/images/down.svg" class="dropdown-icon">
 			</label>
 			<div class="drop-box">
 				<ul class="drop-list">
-					<li>
+					<li style="display:none">
 						<img src="app/images/avatar.svg" class="drop-icon">
 						<span>Profile</span>
 					</li>
 					<li>
 						<img src="app/images/logout.svg" class="drop-icon">
-						<span>Logout</span>
+						<span ng-click="dc.logout()">Logout</span>
 					</li>
 				</ul>
 			</div>
@@ -39,15 +39,15 @@
 					<img src="app/images/plus.svg" class="expand-icon">
 					<div class="submenu">
 						<ul class="sub-list">
-							<li>Building Plan NOC</li>
-							<li>New Building NOC</li>
-							<li>Building NOC Renewal</li>
+							<li ng-click="dc.applyForNewPlan()">Building Plan NOC</li>
+							<li ng-click="dc.applyForNewBuilding()">New Building NOC</li>
+							<li ng-click="dc.applyForRenewalBuilding()">Building NOC Renewal</li>
 						</ul>
 					</div>
 				</li>
 				<li>
 					<img src="app/images/icon2.svg" class="item-icon">
-					<span>My Applications</span>
+					<span ng-click="dc.loadMyApplicationsPage()">My Applications</span>
 				</li>
 			</ul>
 		</aside>

@@ -1,4 +1,4 @@
-module.exports = function(userService, authInfo) {
+module.exports = function(userService, authInfo, $scope) {
     var that = this;
     this.otp = undefined;
     this.user = authInfo.user;
@@ -10,9 +10,7 @@ module.exports = function(userService, authInfo) {
         userService.generateOtp(this)
         .then(function(response) {
             that.generateMessage = "New OTP has been sent to your mobile";
-        })
-        .catch(function(response) {
-
+            $scope.$apply();
         });
     };
 };

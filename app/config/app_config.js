@@ -1,6 +1,6 @@
 module.exports = function() {
     return {
-            BuildingPlanNOC : {
+            NewPlanNOC : {
                 nextState: 'create',
                 firstStage: 'NEW',
                 stages: {

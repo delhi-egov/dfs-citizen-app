@@ -8,5 +8,6 @@
             <button ng-click="vc.verifyOtp()">Verify</button>
         </fieldset>
     </form>
-    <small class="error">{{vc.generateError || vc.verifyError || vc.generateMessage}}</small>
+    <!-- <small class="error">{{vc.generateError || vc.verifyError || vc.generateMessage}}</small> -->
+    <small class="error">{{vc.generateMessage}}</small>
 </div>

@@ -55,7 +55,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       controller: 'applicationsController',
       controllerAs: 'ac'
   })
-    .state('BuildingPlanNOC', {
+    .state('NewPlanNOC', {
       abstract: true,
       templateUrl: 'app/views/dashboard.html',
       controller: 'dashboardController',
@@ -64,28 +64,28 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
             css: 'build/stylesheets/application.css'
       }
   })
-    .state('BuildingPlanNOC.create', {
+    .state('NewPlanNOC.create', {
       templateUrl: 'app/views/partials/new_plan_create.html',
       controller: 'createController',
-      controllerAs: 'npc',
+      controllerAs: 'cc',
       params: params
   })
-    .state('BuildingPlanNOC.fillForm', {
+    .state('NewPlanNOC.fillForm', {
       templateUrl: 'app/views/partials/new_plan_form.html',
       controller: 'fillFormController',
-      controllerAs: 'npc',
+      controllerAs: 'ffc',
       params: params
   })
-    .state('BuildingPlanNOC.uploadDesign', {
+    .state('NewPlanNOC.uploadDesign', {
       templateUrl: 'app/views/partials/new_plan_attach.html',
       controller: 'attachReportController',
-      controllerAs: 'npc',
+      controllerAs: 'arc',
       params: params
   })
-    .state('BuildingPlanNOC.complete', {
+    .state('NewPlanNOC.complete', {
       templateUrl: 'app/views/partials/new_plan_submit.html',
       controller: 'submitController',
-      controllerAs: 'npc',
+      controllerAs: 'sc',
       params: params
   });
 
