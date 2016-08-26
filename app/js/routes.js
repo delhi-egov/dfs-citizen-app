@@ -19,7 +19,10 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       url: '/login',
       templateUrl: 'app/views/partials/login.html',
       controller: 'loginController',
-      controllerAs: 'lc'
+      controllerAs: 'lc',
+      data: {
+            css: ['build/stylesheets/login.css', 'build/stylesheets/usermanagement.css']
+      }
   })
     .state('user.register', {
       url: '/register',

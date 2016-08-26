@@ -111,13 +111,20 @@ a {
 }
 
 .cta {
-    display: block;
+    display: none;
     margin-top: 30px;
     text-align: center;
 
     a {
         cursor: pointer;
+        color: white;
     }
+}
+
+.resend {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
 }
 
 .message {
