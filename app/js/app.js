@@ -8,10 +8,12 @@ var angularCitizenClient = require("angular-citizen-client");
 var appConfig = require("../config/app_config");
 var routes = require("./routes");
 
+var userController = require("./controllers/user_controller");
 var loginController = require("./controllers/login_controller");
 var registerController = require("./controllers/register_controller");
 var verifyController = require("./controllers/verify_controller");
 var homeController = require("./controllers/home_controller");
+var applicationsController = require("./controllers/applications_controller");
 var dashboardController = require("./controllers/dashboard_controller");
 var createController = require("./controllers/create_controller");
 var fillFormController = require("./controllers/fill_form_controller");
@@ -21,7 +23,7 @@ var submitController = require("./controllers/submit_controller");
 var app = angular.module("app", ['ui.router', 'ngFileUpload', 'uiRouterStyles']);
 
 //Interceptors registration
-app.factory("authenticationInterceptor", ['$q', '$location', angularCitizenClient.authenticationInterceptor]);
+app.factory("authenticationInterceptor", ['$q', '$location', '$injector', angularCitizenClient.authenticationInterceptor]);
 
 //Services registration
 app.factory("appConfig", appConfig);
@@ -33,10 +35,12 @@ app.factory("dashboardService", ['$state', 'backendClient', 'authInfo', 'applica
 app.factory("applicationService", ['$state', 'backendClient', 'authInfo', 'applicationInfo', 'appConfig', angularCitizenClient.applicationService]);
 
 //Controller registration
+app.controller("userController", ['userService', userController]);
 app.controller("loginController", ['userService', loginController]);
 app.controller("registerController", ['userService', registerController]);
 app.controller("verifyController", ['userService', 'authInfo', '$scope', verifyController]);
 app.controller("homeController", ['userService', 'dashboardService', homeController]);
+app.controller("applicationsController", ['dashboardService', applicationsController]);
 app.controller("dashboardController", ['userService', 'dashboardService', 'authInfo', '$state', dashboardController]);
 app.controller("createController", ['applicationService', createController]);
 app.controller("fillFormController", ['applicationService', fillFormController]);

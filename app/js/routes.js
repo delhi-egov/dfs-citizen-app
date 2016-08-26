@@ -8,15 +8,17 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
     $stateProvider
 
     .state('user',  {
-        url: '/user',
+        //url: '/user',
         abstract: true,
         templateUrl: 'app/views/usermanagement.html',
+        controller: 'userController',
+        controllerAs: 'uc',
         data: {
             css: 'build/stylesheets/usermanagement.css'
         }
     })
     .state('user.login', {
-      url: '/login',
+      //url: '/login',
       templateUrl: 'app/views/partials/login.html',
       controller: 'loginController',
       controllerAs: 'lc',
@@ -25,7 +27,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       }
   })
     .state('user.register', {
-      url: '/register',
+      //url: '/register',
       templateUrl: 'app/views/partials/register.html',
       controller: 'registerController',
       controllerAs: 'rc',
@@ -34,13 +36,16 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       }
   })
     .state('user.verify', {
-      url: '/verify',
+      //url: '/verify',
       templateUrl: 'app/views/partials/verify.html',
       controller: 'verifyController',
-      controllerAs: 'vc'
+      controllerAs: 'vc',
+      data: {
+            css: ['build/stylesheets/verify.css', 'build/stylesheets/usermanagement.css']
+      }
   })
     .state('dashboard',  {
-        url: '/dashboard',
+        //url: '/dashboard',
         abstract: true,
         templateUrl: 'app/views/dashboard.html',
         controller: 'dashboardController',
@@ -56,7 +61,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       controllerAs: 'hc'
   })
     .state('dashboard.applications', {
-      url: '/applications',
+      //url: '/applications',
       templateUrl: 'app/views/partials/applications.html',
       controller: 'applicationsController',
       controllerAs: 'ac'
@@ -95,8 +100,8 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       params: params
   });
 
-    $urlRouterProvider.otherwise('/dashboard/');
+    $urlRouterProvider.otherwise('/');
 
     // use the HTML5 History API
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 };
