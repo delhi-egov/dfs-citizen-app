@@ -28,7 +28,10 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       url: '/register',
       templateUrl: 'app/views/partials/register.html',
       controller: 'registerController',
-      controllerAs: 'rc'
+      controllerAs: 'rc',
+      data: {
+            css: ['build/stylesheets/register.css', 'build/stylesheets/usermanagement.css']
+      }
   })
     .state('user.verify', {
       url: '/verify',
