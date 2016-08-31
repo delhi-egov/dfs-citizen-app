@@ -80,3 +80,9 @@ small {
 button {
   cursor: pointer;
 }
+
+label:after {
+  content: "*";
+  color: red;
+  padding-left: 2px;
+}
