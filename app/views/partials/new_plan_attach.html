@@ -11,12 +11,12 @@
 				<span ngf-select ng-model="arc.file" name="file">select a file from computer</span>
 			</div>
 		</section>
-		<section class="upload-display">
+		<section class="upload-display" ng-hide="!(arc.file.name || arc.existingDocument)">
 			<span>{{arc.file.name || arc.existingDocument}}</span>
 		</section>
 		<section class="actions">
 			<button class="back-button" ng-click="arc.back()">Back</button>
-			<button class="save-button" ng-click="arc.submit()" ng-disabled="!arc.file">Save</button>
+			<button class="save-button" ng-click="arc.submit()" ng-disabled="!arc.file && !arc.existingDocument">Save</button>
 		</section>
 		<small class="error">{{arc.submitError}}</small>
 	</section>

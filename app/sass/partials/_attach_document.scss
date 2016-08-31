@@ -59,6 +59,10 @@
 				color: $main-color;
 				cursor: pointer;
 			}
+
+			span {
+				cursor: pointer;
+			}
 		}
 	}
 
@@ -95,5 +99,11 @@
 	.save-button {
 		color: white;
 		background-color: #7bd54f;
+
+		
+		&[disabled] {
+			background-color: grey;
+			cursor: not-allowed;
+		}
 	}
 }

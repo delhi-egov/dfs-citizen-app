@@ -23,5 +23,7 @@ module.exports = function(userService, dashboardService) {
     this.applyForRenewalBuilding = function() {
         this.apply('RenewBuildingNOC');
     }
-    dashboardService.getApplications(this);
+    userService.me(this).then(function() {
+        dashboardService.getApplications(that);
+    });
 };

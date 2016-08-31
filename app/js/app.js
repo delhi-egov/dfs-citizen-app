@@ -61,7 +61,7 @@ app.controller("loginController", ['userService', loginController]);
 app.controller("registerController", ['userService', registerController]);
 app.controller("verifyController", ['userService', 'authInfo', '$scope', verifyController]);
 app.controller("homeController", ['userService', 'dashboardService', homeController]);
-app.controller("applicationsController", ['dashboardService', applicationsController]);
+app.controller("applicationsController", ['dashboardService', 'userService', applicationsController]);
 app.controller("dashboardController", ['userService', 'dashboardService', 'authInfo', '$state', '$scope', '$timeout', dashboardController]);
 app.controller("createController", ['applicationService', createController]);
 app.controller("fillFormController", ['applicationService', fillFormController]);
@@ -78,7 +78,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
 //Run on load
 app.run(['backendClient', 'authInfo', function(backendClient, authInfo) {
 	backendClient.me().then(function(response) {
-		authInfo.user = response.data;
 		console.log("User data loaded");
 	}, function(response) {
 		console.error("Could not load user information");

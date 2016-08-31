@@ -1,7 +1,9 @@
-module.exports = function(dashboardService) {
+module.exports = function(dashboardService, userService) {
     var that = this;
     this.resume= function(application) {
         dashboardService.resumeApplication(this, application);
     };
-    dashboardService.getApplications(this);
+    userService.me(this).then(function() {
+    	dashboardService.getApplications(that);
+    });
 };
