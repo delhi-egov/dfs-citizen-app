@@ -3,8 +3,16 @@ module.exports = function(userService, dashboardService) {
     this.apply = function(process) {
         dashboardService.newApplication(this, process);
     };
-    this.resume= function(application) {
+    this.resume = function(application) {
         dashboardService.resumeApplication(this, application);
+    };
+    this.takeAction = function(application) {
+        if(application.stage === 'WAITING_ON_USER') {
+            //Add edit action here
+        }
+        else if(application.stage !== 'COMPLETE') {
+            this.resume(application);
+        }
     };
     this.applyForNewPlan = function() {
         this.apply('NewPlanNOC');

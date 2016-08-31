@@ -26,7 +26,7 @@
 	}
 
 	ul {
-		list-style-image: url(../images/checked.svg);
+		list-style-image: url(../../app/images/checked.svg);
 		width: 60%;
 		margin: 30px auto;
 		text-indent: justify;
@@ -43,5 +43,17 @@
 		line-height: 26px;
 		max-width: 1000px;
 		margin: 0 auto;
+	}
+
+	.back-button {
+		display: inline-block;
+		color: white;
+		background-color: $main-color;
+	}
+
+	.save-button {
+		display: inline-block;
+		color: white;
+		background-color: #7bd54f;
 	}
 }

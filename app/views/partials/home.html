@@ -25,31 +25,19 @@
 			<thead>
 				<th>Application No.</th>
 				<th>Type</th>
-				<th>Date of Application</th>
+				<th>Date of Creation</th>
 				<th>Status</th>
+				<th>Progress</th>
 				<th>Action</th>
 			</thead>
 			<tbody>
-				<tr>
-					<td>#1203</td>
-					<td>New Plan NOC</td>
-					<td>June 24, 2016</td>
-					<td><span class="status accepted">Accepted</span></td>
-					<td>-</td>
-				</tr>
-				<tr>
-					<td>#1204</td>
-					<td>New Plan NOC</td>
-					<td>June 25, 2016</td>
-					<td><span class="status rejected">Rejected</span></td>
-					<td>-</td>
-				</tr>
-				<tr>
-					<td>#1205</td>
-					<td>New Plan NOC</td>
-					<td>June 26, 2016</td>
-					<td><span class="status progress">Progress</span></td>
-					<td>-</td>
+				<tr ng-repeat="application in hc.applications">
+					<td>#{{application.id}}</td>
+					<td>{{application.type.name}}</td>
+					<td>{{application.createdAt | date : "medium"}}</td>
+					<td><span class="status" ng-class="application.status === 'PROGRESS' ? 'progress' : application.status === 'FINISHED' ? 'accepted' : 'rejected'">{{application.status | statusFilter}}</span></td>
+					<td>{{application.progress | capitalize}}</td>
+					<td><button ng-click="hc.takeAction(application)" ng-disabled="application.status === 'PROGRESS'">{{application.status === "PROGRESS" ? "-" : application.status === "WAITING_ON_USER" ? "Edit" : "Resume"}}</button></td>
 				</tr>
 			</tbody>
 		</table>

@@ -247,11 +247,13 @@ aside {
 }
 
 .back-button {
+	display: inline-block;
 	color: white;
 	background-color: $main-color;
 }
 
 .save-button {
+	display: inline-block;
 	color: white;
 	background-color: #7bd54f;
 }

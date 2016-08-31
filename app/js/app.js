@@ -22,6 +22,27 @@ var submitController = require("./controllers/submit_controller");
 
 var app = angular.module("app", ['ui.router', 'ngFileUpload', 'uiRouterStyles']);
 
+//Filters
+app.filter('statusFilter', function() {
+	return function(status) {
+		if(status === 'PROGRESS') {
+			return 'Progress';
+		}
+		else if(status === 'NOT_SUBMITTED') {
+			return 'Not Submitted';
+		}
+		else if(status === 'WAITING_ON_USER') {
+			return 'Needs Editing';
+		}
+	}
+});
+
+app.filter('capitalize', function() {
+    return function(input) {
+      return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
+});
+
 //Interceptors registration
 app.factory("authenticationInterceptor", ['$q', '$location', '$injector', angularCitizenClient.authenticationInterceptor]);
 
@@ -41,7 +62,7 @@ app.controller("registerController", ['userService', registerController]);
 app.controller("verifyController", ['userService', 'authInfo', '$scope', verifyController]);
 app.controller("homeController", ['userService', 'dashboardService', homeController]);
 app.controller("applicationsController", ['dashboardService', applicationsController]);
-app.controller("dashboardController", ['userService', 'dashboardService', 'authInfo', '$state', dashboardController]);
+app.controller("dashboardController", ['userService', 'dashboardService', 'authInfo', '$state', '$scope', '$timeout', dashboardController]);
 app.controller("createController", ['applicationService', createController]);
 app.controller("fillFormController", ['applicationService', fillFormController]);
 app.controller("attachReportController", ['applicationService', attachReportController]);
@@ -55,8 +76,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationP
 }]);
 
 //Run on load
-app.run(['backendClient', function(backendClient) {
+app.run(['backendClient', 'authInfo', function(backendClient, authInfo) {
 	backendClient.me().then(function(response) {
+		authInfo.user = response.data;
 		console.log("User data loaded");
 	}, function(response) {
 		console.error("Could not load user information");
