@@ -44,7 +44,7 @@ app.filter('capitalize', function() {
 });
 
 //Interceptors registration
-app.factory("authenticationInterceptor", ['$q', '$location', '$injector', angularCitizenClient.authenticationInterceptor]);
+app.factory("authenticationInterceptor", ['$q', '$location', '$injector', 'authInfo', angularCitizenClient.authenticationInterceptor]);
 
 //Services registration
 app.factory("appConfig", appConfig);

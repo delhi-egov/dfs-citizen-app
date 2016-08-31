@@ -1,12 +1,12 @@
 <div class="main">
     <h2>Login</h2>
-    <form class="form login">
+    <form class="form login" name="loginForm">
         <fieldset>
             <label for="phone">Mobile No.</label>
-            <input type="number" placeholder="9876543210" name="phone" id="phone" required pattern="\d{10}" ng-model="lc.credentials.phone">
+            <input type="number" placeholder="9876543210" name="phone" id="phone" required ng-model="lc.credentials.phone">
             <label for="password">Password</label>
             <input type="password" placeholder="******" name="password" id="password" required ng-model="lc.credentials.password">
-            <button ng-click="lc.login()">Login</button>
+            <button type="submit" ng-click="lc.login(loginForm.$invalid)">Login</button>
         </fieldset>
     </form>
     <small class="error">{{lc.loginError}}</small>

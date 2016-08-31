@@ -2,8 +2,10 @@ module.exports = function(userService, authInfo, $scope) {
     var that = this;
     this.otp = undefined;
     this.user = authInfo.user;
-    this.verifyOtp = function() {
-        userService.verifyOtp(this, this.otp);
+    this.verifyOtp = function(error) {
+        if(!error) {
+            userService.verifyOtp(this, this.otp);
+        }
     };
     this.generateOtp = function() {
         that.generateMessage = undefined;
