@@ -85,7 +85,10 @@ header {
 					visibility: visible;
 				}
 			}
-			
+		}
+
+		label:after {
+  			content: "";
 		}
 
 		.profile {
