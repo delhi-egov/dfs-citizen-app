@@ -25,14 +25,14 @@
 		.upload-box {
 			width: 50%;
 			text-align: center;
-			border-style: dashed;
+			border-style: none;
 			border-width: 2px;
 			border-color: $grey-text-color;
 			padding: 30px;
 			margin: 0 auto;
 
 			img {
-				width: 80px;
+				width: 200px;
 				display: block;
 				margin: 0 auto;
 			}
@@ -42,6 +42,7 @@
 				font-size: 12px;
 				margin-top: 16px;
 				line-height: 12px;
+				text-decoration: underline;
 			}
 		}
 
