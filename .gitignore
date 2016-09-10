@@ -46,3 +46,6 @@ build
 
 # Sass cache
 .sass-cache
+
+# Mac
+.DS_Store
