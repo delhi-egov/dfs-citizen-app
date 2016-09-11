@@ -3,7 +3,7 @@
     <form class="form login" name="loginForm">
         <fieldset>
             <label for="phone">Mobile No.</label>
-            <input type="number" placeholder="9876543210" name="phone" id="phone" required ng-model="lc.credentials.phone">
+            <input type="number" placeholder="9876543210" name="phone" id="phone" required ng-model="lc.credentials.phone" autofocus>
             <label for="password">Password</label>
             <input type="password" placeholder="******" name="password" id="password" required ng-model="lc.credentials.password">
             <button type="submit" ng-click="lc.login(loginForm.$invalid)">Login</button>

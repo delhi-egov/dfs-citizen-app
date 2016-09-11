@@ -3,6 +3,7 @@ var angular = require("angular");
 require("angular-ui-router");
 require("ng-file-upload");
 require('angular-ui-router-styles');
+require('angular-block-ui');
 
 var angularCitizenClient = require("angular-citizen-client");
 var appConfig = require("../config/app_config");
@@ -20,7 +21,7 @@ var fillFormController = require("./controllers/fill_form_controller");
 var attachReportController = require("./controllers/attach_report_controller");
 var submitController = require("./controllers/submit_controller");
 
-var app = angular.module("app", ['ui.router', 'ngFileUpload', 'uiRouterStyles']);
+var app = angular.module("app", ['ui.router', 'ngFileUpload', 'uiRouterStyles', 'blockUI']);
 
 //Filters
 app.filter('statusFilter', function() {

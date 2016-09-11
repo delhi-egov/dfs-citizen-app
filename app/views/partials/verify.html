@@ -3,7 +3,7 @@
     <h4 class="message">OTP has been sent to your mobile number<br><br><strong>{{vc.user.phone}}</strong></h4>
     <form class="form" name="verifyForm">
         <fieldset>
-            <input type="password" required pattern="\d{6}" class="otp" ng-model="vc.otp">
+            <input type="password" required pattern="\d{6}" class="otp" ng-model="vc.otp" autofocus>
             <small class="resend" ng-click="vc.generateOtp()">Didn't recieve the OTP? <a>Resend Code</a></small>
             <button type="submit" ng-click="vc.verifyOtp(verifyForm.$invalid)">Verify</button>
         </fieldset>

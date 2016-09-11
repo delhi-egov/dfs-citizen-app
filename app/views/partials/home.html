@@ -31,7 +31,7 @@
 				<th>Action</th>
 			</thead>
 			<tbody>
-				<tr ng-repeat="application in hc.applications | limitTo: 5">
+				<tr ng-repeat="application in hc.applications | orderBy:'-' | limitTo: 5">
 					<td>#{{application.id}}</td>
 					<td>{{application.type.name}}</td>
 					<td>{{application.createdAt | date : "medium"}}</td>

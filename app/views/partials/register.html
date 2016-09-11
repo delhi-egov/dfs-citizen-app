@@ -3,7 +3,7 @@
     <form name="registerForm" class="form register">
         <fieldset>
             <label for="phone">Mobile No.</label>
-            <input type="number" placeholder="9876543210" name="phone" id="phone" required min="1000000000" max="9999999999" oninvalid="setCustomValidity('A valid mobile number is required')" onchange="try{setCustomValidity('')} catch(e){}" ng-model="rc.credentials.phone">
+            <input type="number" placeholder="9876543210" name="phone" id="phone" required min="1000000000" max="9999999999" oninvalid="setCustomValidity('A valid mobile number is required')" onchange="try{setCustomValidity('')} catch(e){}" ng-model="rc.credentials.phone" autofocus>
             <label for="first_name">First Name</label>
             <input type="text" placeholder="Vaibhav" name="first_name" id="first_name" required ng-model="rc.credentials.firstName">
             <label for="last_name">Last Name</label>
