@@ -8,7 +8,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
     $stateProvider
 
     .state('user',  {
-        //url: '/user',
         abstract: true,
         templateUrl: 'app/views/usermanagement.html',
         controller: 'userController',
@@ -18,7 +17,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
         }
     })
     .state('user.login', {
-      //url: '/login',
       templateUrl: 'app/views/partials/login.html',
       controller: 'loginController',
       controllerAs: 'lc',
@@ -27,7 +25,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       }
   })
     .state('user.register', {
-      //url: '/register',
       templateUrl: 'app/views/partials/register.html',
       controller: 'registerController',
       controllerAs: 'rc',
@@ -36,7 +33,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       }
   })
     .state('user.verify', {
-      //url: '/verify',
       templateUrl: 'app/views/partials/verify.html',
       controller: 'verifyController',
       controllerAs: 'vc',
@@ -45,7 +41,6 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       }
   })
     .state('dashboard',  {
-        //url: '/dashboard',
         abstract: true,
         templateUrl: 'app/views/dashboard.html',
         controller: 'dashboardController',
@@ -61,12 +56,12 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       controllerAs: 'hc'
   })
     .state('dashboard.applications', {
-      //url: '/applications',
       templateUrl: 'app/views/partials/applications.html',
       controller: 'applicationsController',
       controllerAs: 'ac'
   })
-    .state('NewPlanNOC', {
+
+    .state('Granting-of-Fire-Safety-Certificate', {
       abstract: true,
       templateUrl: 'app/views/dashboard.html',
       controller: 'dashboardController',
@@ -75,26 +70,94 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
             css: 'build/stylesheets/application.css'
       }
   })
-    .state('NewPlanNOC.create', {
-      templateUrl: 'app/views/partials/new_plan_create.html',
+    .state('Granting-of-Fire-Safety-Certificate.create', {
+      templateUrl: 'app/views/partials/grant_create.html',
       controller: 'createController',
       controllerAs: 'cc',
       params: params
   })
-    .state('NewPlanNOC.fillForm', {
-      templateUrl: 'app/views/partials/new_plan_form.html',
+    .state('Granting-of-Fire-Safety-Certificate.fillForm', {
+      templateUrl: 'app/views/partials/grant_form.html',
       controller: 'fillFormController',
       controllerAs: 'ffc',
       params: params
   })
-    .state('NewPlanNOC.uploadDesign', {
-      templateUrl: 'app/views/partials/new_plan_attach.html',
+    .state('Granting-of-Fire-Safety-Certificate.uploadCertificate', {
+      templateUrl: 'app/views/partials/grant_attach.html',
       controller: 'attachReportController',
       controllerAs: 'arc',
       params: params
   })
-    .state('NewPlanNOC.complete', {
-      templateUrl: 'app/views/partials/new_plan_submit.html',
+    .state('Granting-of-Fire-Safety-Certificate.complete', {
+      templateUrl: 'app/views/partials/grant_submit.html',
+      controller: 'submitController',
+      controllerAs: 'sc',
+      params: params
+  })
+
+  .state('Renewal-of-Fire-Safety-Certificate', {
+      abstract: true,
+      templateUrl: 'app/views/dashboard.html',
+      controller: 'dashboardController',
+      controllerAs: 'dc',
+      data: {
+            css: 'build/stylesheets/application.css'
+      }
+  })
+    .state('Renewal-of-Fire-Safety-Certificate.create', {
+      templateUrl: 'app/views/partials/renew_create.html',
+      controller: 'createController',
+      controllerAs: 'cc',
+      params: params
+  })
+    .state('Renewal-of-Fire-Safety-Certificate.fillForm', {
+      templateUrl: 'app/views/partials/renew_form.html',
+      controller: 'fillFormController',
+      controllerAs: 'ffc',
+      params: params
+  })
+    .state('Renewal-of-Fire-Safety-Certificate.fillDeclarationForm', {
+      templateUrl: 'app/views/partials/renew_declaration_form.html',
+      controller: 'fillFormController',
+      controllerAs: 'ffc',
+      params: params
+  })
+    .state('Renewal-of-Fire-Safety-Certificate.uploadFsc', {
+      templateUrl: 'app/views/partials/renew_attach.html',
+      controller: 'attachReportController',
+      controllerAs: 'arc',
+      params: params
+  })
+    .state('Renewal-of-Fire-Safety-Certificate.complete', {
+      templateUrl: 'app/views/partials/renew_submit.html',
+      controller: 'submitController',
+      controllerAs: 'sc',
+      params: params
+  })
+
+  .state('Declaration-by-Owner/Occupier', {
+      abstract: true,
+      templateUrl: 'app/views/dashboard.html',
+      controller: 'dashboardController',
+      controllerAs: 'dc',
+      data: {
+            css: 'build/stylesheets/application.css'
+      }
+  })
+    .state('Declaration-by-Owner/Occupier.create', {
+      templateUrl: 'app/views/partials/declaration_create.html',
+      controller: 'createController',
+      controllerAs: 'cc',
+      params: params
+  })
+    .state('Declaration-by-Owner/Occupier.fillForm', {
+      templateUrl: 'app/views/partials/declaration_form.html',
+      controller: 'fillFormController',
+      controllerAs: 'ffc',
+      params: params
+  })
+    .state('Declaration-by-Owner/Occupier.complete', {
+      templateUrl: 'app/views/partials/declaration_submit.html',
       controller: 'submitController',
       controllerAs: 'sc',
       params: params

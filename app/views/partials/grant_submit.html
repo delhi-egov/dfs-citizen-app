@@ -1,0 +1,25 @@
+<div>
+	<section class="instructions">
+		<img src="app/images/submit.svg">
+		<h3>Application to issue Fire Safety Certificate</h3>
+		<p>
+			<div class="top-message">
+				Once you submit the application, it will go through following process:
+			</div>
+			<ul>
+				<li>The building or premises will be inspected by a team of fire officers</li>
+				<li>The fire officers will make their recommendation to grant or refuse Fire Safety Certificate</li>
+				<li>Based on the recommendations, the Director will grant or refuse the Fire Safety Certificate</li>
+				<li>The decision will be communicated to you along with the reasons for the same</li>
+			</ul>
+			<div class="bottom-message">
+				Once the application in submitted by clicking on <strong>Submit</strong> on this screen, it is sent to Delhi Fire Service. You can always check the status of your application by accessing the application from <strong>My Applications</strong> link on the side bar.
+			</div>
+		</p>
+		<section class="actions">
+			<button class="back-button" ng-click="sc.back()">Back</button>
+			<button class="save-button" ng-click="sc.submit()">Submit</button>
+		</section>
+		<small class="error">{{sc.completeError}}</small>
+	</section>
+</div>

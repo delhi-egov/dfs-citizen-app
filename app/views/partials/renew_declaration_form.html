@@ -1,0 +1,47 @@
+<div class="form form-k">
+	<section class="letter-heading">
+		<h4>FORM 'K': DECLARATION BY OWNER/OCCUPIER</h4>
+		[See sub-rule (2) of rule 38]
+	</section>
+	<section class="letter">
+		<section class="heading">
+			DECLARATION
+		</section>
+		<section class="letter-content">
+			<p>
+				It is hereby declared that the
+				<input type="text" class="building-name" ng-model="ffc.form.buildingName">
+				(name of the building or premises) located at
+				<input type="text" class="address" ng-model="ffc.form.buildingAddress">
+				(address) comprised of
+				<input type="text" class="basements" ng-model="ffc.form.basements">
+				basement (s) and
+				<input type="text" class="floors" ng-model="ffc.form.floors">
+				(upper floors) have complied with the fire prevention and fire safety requirements in accordance with rule 33 of the Delhi Fire Service Rules, 2010 and issued Fire Safety Certificate vide Computer ID NO.
+				<input type="text" class="id" ng-model="ffc.form.id">
+				for a period of
+				<input type="number" class="period" ng-model="ffc.form.period">
+				years in accordance with rule 36 valid from
+				<input type="date" class="start" ng-model="ffc.form.startDate">
+				to
+				<input type="date" class="end" ng-model="ffc.form.endDate">
+				and the fire prevention and fire safety measures provided in the building/premises have been checked by me / in my presence  by Fire Safety officer on
+				<input type="date" class="inspection-date" ng-model="ffc.form.inspectionDate">
+				and found them in place and in good repairs.
+				.
+			</p>
+			<p>
+				It is further declared that no additions or alterations have been made in the building/premises affecting the fire prevention and fire safety measures including the means of escape and that all exits and passages are free from any obstruction.
+			</p>
+		</section>
+		<section class="sender-details">
+			Name <input type="text" class="name" ng-model="ffc.form.name"><br>
+			Address <input type="text" class="address" ng-model="ffc.form.address">
+		</section>
+	</section>
+	<section class="actions">
+		<button class="back-button" ng-click="ffc.back()">Back</button>
+		<button class="save-button" ng-click="ffc.submit()">Save</button>
+	</section>
+	<small class="error">{{ffc.attachError}}</small>
+</div>

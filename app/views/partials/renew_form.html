@@ -1,7 +1,7 @@
 <div class="form form-i">
 	<section class="letter-heading">
-		<h4>FORM 'I': APPLICATION FOR GRANT OF FIRE SAFETY CERTIFICATE</h4>
-		[See sub-rule (2) of rule 35]
+		<h4>FORM 'J': APPLICATION FOR RENEWAL OF FIRE SAFETY CERTIFICATE</h4>
+		[See sub-rule (1) of rule 37]
 	</section>
 	<section class="letter">
 		<section class="address">
@@ -13,41 +13,47 @@
 			New Delhi-110 001<br>
 		</section>
 		<section class="subject">
-			Sub: Application for grant of fire safety certificate in respect of
+			Sub: Application for renewal of fire safety certificate in respect of
 			<input type="text" class="building-name-1" ng-model="ffc.form.buildingName">
 			at
 			<input type="text" class="address-1" ng-model="ffc.form.buildingAddress">
 			(address of building/premises).
+		</section>
+		<section class="ref">
+			Ref: Computer ID No
+			<input type="text" class="id" ng-model="ffc.form.id">
 		</section>
 		<section class="salutation">
 			Sir/Madam,
 		</section>
 		<section class="letter-content">
 			<p>
-				This is to inform you that a fire safety certificate needs to be issued in respect of
-				<input type="text" class="building-name-2" ng-model="ffc.form.buildingName">
-				(name of the building) located at
-				<input type="text" class="address-2" ng-model="ffc.form.buildingAddress">
-				(address of the building) comprised of
-				<input type="text" class="comprised-of" ng-model="ffc.form.comprisedOf">
-				and having occupancies as
-				<input type="text" class="occupancies" ng-model="ffc.form.occupancies">
-				.
-			</p>
-			<p>
-				In this connection it is submitted that all the fire prevention and fire safety measures as recommended by you vide letter No.
+				This is to inform you that a fire safety certificate was issued vide your letter No.
 				<input type="text" class="letter-no" ng-model="ffc.form.letterNumber">
 				dated
 				<input type="date" class="letter-date" ng-model="ffc.form.letterDate">
-				have been provided in the building/premises and para wise compliance report is enclosed.
+				in respect of 
+				<input type="text" class="building-name-2" ng-model="ffc.form.buildingName">
+				(name of the building) located at
+				<input type="text" class="address-2" ng-model="ffc.form.buildingAddress">
+				(address of the building) is valid until
+				<input type="date" class="validity" ng-model="ffc.form.validity">
+				and is due for renewal for a period of another
+				<input type="number" class="years" ng-model="ffc.form.years">
+				wef
+				<input type="date" class="renewal-date" ng-model="ffc.form.renewalDate">
+				.
 			</p>
 			<p>
-				You are requested to kindly take action as necessary for grant of fire safety certificate for occupancy of the building/premises.
+				In this connection it is submitted that there is no material change in the building affecting the means of access, means of escape and that all fire prevention and fire safety measures have been tested and are in good working condition. A declaration as required under rule 38 is enclosed.
+			</p>
+			<p>
+				You are requested to kindly take action as necessary for renewal of fire safety certificate for continued occupancy of the building/premises.
 			</p>
 		</section>
 		<section class="sender-details">
 			Dated <input type="date" class="dated" ng-model="ffc.form.date"><br>
-			Contact Details <input type="text" class="contact-details" ng-model="ffc.form.contactDetails"><br>
+			Contact Details:<br>
 			Name in full <input type="text" class="name" ng-model="ffc.form.name"><br>
 			Tel No. <input type="tel" class="telephone" ng-model="ffc.form.telephone"><br>
 			Mobile No. <input type="tel" class="mobile" ng-model="ffc.form.mobile"><br>

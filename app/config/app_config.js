@@ -1,6 +1,6 @@
 module.exports = function() {
     return {
-            NewPlanNOC : {
+            'Granting-of-Fire-Safety-Certificate' : {
                 nextState: 'create',
                 firstStage: 'NEW',
                 stages: {
@@ -10,30 +10,30 @@ module.exports = function() {
                         params: {}
                     },
                     'FORM_FILLED': {
-                        nextState: 'uploadDesign',
-                        nextStage: 'UPLOADED_DESIGN',
+                        nextState: 'uploadCertificate',
+                        nextStage: 'UPLOADED_CERTIFICATE',
                         previousState: 'create',
                         previousStage: 'NEW',
                         params: {
-                            formType: 'Form-I'
+                            formType: 'Form I'
                         }
                     },
-                    'UPLOADED_DESIGN': {
+                    'UPLOADED_CERTIFICATE': {
                         nextState: 'complete',
                         nextStage: 'COMPLETE',
                         previousState: 'fillForm',
                         previousStage: 'FORM_FILLED',
                         params: {
-                            documentType: 'Architecture'
+                            documentType: 'Certificate from Architect'
                         }
                     },
                     'COMPLETE': {
-                        previousState: 'uploadDesign',
-                        previousStage: 'UPLOADED_DESIGN',
+                        previousState: 'uploadCertificate',
+                        previousStage: 'UPLOADED_CERTIFICATE',
                     }
                 }
             },
-            NewBuildingNOC : {
+            'Renewal-of-Fire-Safety-Certificate' : {
                 nextState: 'create',
                 firstStage: 'NEW',
                 stages: {
@@ -43,21 +43,59 @@ module.exports = function() {
                         params: {}
                     },
                     'FORM_FILLED': {
-                        nextState: 'uploadId',
-                        nextStage: 'UPLOADED_ID',
+                        nextState: 'fillDeclarationForm',
+                        nextStage: 'DECLARATION_FORM_FILLED',
+                        previousState: 'create',
+                        previousStage: 'NEW',
                         params: {
-                            formType: 'Form-I'
+                            formType: 'Form J'
                         }
                     },
-                    'UPLOADED_ID': {
+                    'DECLARATION_FORM_FILLED': {
+                        nextState: 'uploadFsc',
+                        nextStage: 'UPLOADED_FSC',
+                        previousState: 'fillForm',
+                        previousStage: 'FORM_FILLED',
+                        params: {
+                            formType: 'Form K'
+                        }
+                    },
+                    'UPLOADED_FSC': {
                         nextState: 'complete',
                         nextStage: 'COMPLETE',
+                        previousState: 'fillDeclarationForm',
+                        previousStage: 'DECLARATION_FORM_FILLED',
                         params: {
-                            documentType: 'Photo ID Proof'
+                            documentType: 'Fire Safety Certificate'
                         }
                     },
                     'COMPLETE': {
-
+                        previousState: 'uploadFsc',
+                        previousStage: 'UPLOADED_FSC'
+                    }
+                }
+            },
+            'Declaration-by-Owner/Occupier' : {
+                nextState: 'create',
+                firstStage: 'NEW',
+                stages: {
+                    'NEW' : {
+                        nextState: 'fillForm',
+                        nextStage:'FORM_FILLED',
+                        params: {}
+                    },
+                    'FORM_FILLED': {
+                        nextState: 'complete',
+                        nextStage: 'COMPLETE',
+                        previousState: 'create',
+                        previousStage: 'NEW',
+                        params: {
+                            formType: 'Form K'
+                        }
+                    },
+                    'COMPLETE': {
+                        previousState: 'fillForm',
+                        previousStage: 'FORM_FILLED'
                     }
                 }
             }

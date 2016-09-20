@@ -1,0 +1,23 @@
+<div>
+	<section class="instructions">
+		<img src="app/images/create.svg">
+		<h3>Application to renew Fire Safety Certificate</h3>
+		<p>
+			<div class="top-message">
+				The process to apply for renewal of Fire Safety Certificate has the following steps:
+			</div>
+			<ul>
+				<li>Create a new application by clicking <strong>Create Application</strong> button below</li>
+				<li>Fill <em>Form J</em></li>
+				<li>Fill <em>Form K</em></li>
+				<li>Upload the <em>Fire Safety Certificate</em> that had been issued</li>
+				<li>Click <strong>Submit</strong> button on the final screen</li>
+			</ul>
+			<div class="bottom-message">
+				Once an application in created by clicking on <strong>Create Application</strong> on this screen, it is saved in our system and you can resume filling it if you leave it incomplete by accessing the application from <strong>My Applications</strong> link on the side bar. The application is only submitted to the department for review once you click <strong>Submit</strong> on the final screen.
+			</div>
+		</p>
+		<button ng-click="cc.createApplication()">Create Application</button>
+		<small class="error">{{cc.createError}}</small>
+	</section>
+</div>
