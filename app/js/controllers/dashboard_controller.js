@@ -19,12 +19,12 @@ module.exports = function(userService, dashboardService, authInfo, $state, $scop
         $state.go('dashboard.home');
     };
     this.applyForNewPlan = function() {
-    	this.apply('NewPlanNOC');
+    	this.apply('Granting-of-Fire-Safety-Certificate');
     };
     this.applyForNewBuilding = function() {
-    	this.apply('NewBuildingNOC');
+    	this.apply('Renewal-of-Fire-Safety-Certificate');
     };
     this.applyForRenewalBuilding = function() {
-    	this.apply('RenewBuildingNOC');
+    	this.apply('Declaration-by-Owner/Occupier');
     };
 };

@@ -13,7 +13,7 @@
 			<tbody>
 				<tr ng-repeat="application in ac.applications">
 					<td>#{{application.id}}</td>
-					<td>{{application.type.name}}</td>
+					<td>{{application.type.name | typeFilter}}</td>
 					<td>{{application.createdAt | date : "medium"}}</td>
 					<td><span class="status" ng-class="application.status === 'PROGRESS' ? 'progress' : application.status === 'FINISHED' ? 'accepted' : 'rejected'">{{application.status | statusFilter}}</span></td>
 					<td>{{application.progress | capitalize}}</td>

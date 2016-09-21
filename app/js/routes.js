@@ -117,7 +117,7 @@ module.exports = function($stateProvider, $urlRouterProvider, $locationProvider)
       params: params
   })
     .state('Renewal-of-Fire-Safety-Certificate.fillDeclarationForm', {
-      templateUrl: 'app/views/partials/renew_declaration_form.html',
+      templateUrl: 'app/views/partials/declaration_form.html',
       controller: 'fillFormController',
       controllerAs: 'ffc',
       params: params

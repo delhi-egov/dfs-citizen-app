@@ -44,6 +44,12 @@ app.filter('capitalize', function() {
     }
 });
 
+app.filter('typeFilter', function() {
+    return function(input) {
+      return input.replace(/-/g, ' ');
+    }
+});
+
 //Interceptors registration
 app.factory("authenticationInterceptor", ['$q', '$location', '$injector', 'authInfo', angularCitizenClient.authenticationInterceptor]);
 
